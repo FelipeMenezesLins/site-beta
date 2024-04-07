@@ -9,11 +9,12 @@
 
 body {
     height:100vh;
-    background-color:black;
+    width:100%;
+    background-image:linear-gradient(to right, rgb(128, 4, 4), rgb(94, 3, 3));
 }
 
 header {
-    background-color:rgb(18, 148, 255);
+    background-color:red;
     color:white;
 }
 
@@ -56,23 +57,33 @@ menu > ul > li {
 }
 
 menu > ul > li > a {
-    color:blue;
+    color:red;
     text-decoration:none;
+}
+
+menu > ul > li > a:hover {
+    color:rgb(53, 3, 3);
 }
 
 main {
     padding:10px;
     margin:0 auto;
-    width:80%;
     background-color:rgb(245, 243, 243);
     border-radius:5px;
-    height:100%;
+    width:90%;
+    max-height:1400px;
     margin-top:40px;
+    display:flex;
+    flex-wrap: wrap;
+}
+
+main > div {
+    flex: 1 1 300px;
 }
 
 footer {
     margin-top:40px;
-    background-color:blue;
+    background-color:red;
     color:white;
     text-align:center;
 }
@@ -80,30 +91,51 @@ footer {
 footer img{
     display:block;
     margin:auto;
-    width:40px;
+    width:100px;
+}
+
+footer a {
+    color:black;
+    text-decoration:none;
+}
+
+footer a:hover{
+    color:rgb(94, 3, 3);
 }
 
 @media screen and (min-width:768px) and (max-width:992px) {
     header {
-        background-color:rgb(18, 148, 255);
+        background-color:rgb(252, 3, 3);
         color:white;
         padding:10px;
-        display:flex;
-        justify-content: space-between;
+        height:220px;
         align-items:center;
-        border: 1px solid blue;
+    }
+
+    header h1 {
+        font-size:1.2em;
+        margin:0;
     }
     
     header > div.logo img  {
-       width:50px;
+       width:100px;
     }
     
-    
-    
+    menu {
+        display:block;
+        height:100px;
+        margin-top:30px;
+    }
+
+    header > div.burguer > span{
+        display:none;
+    }
+
     menu > ul {
         list-style-type:none;
         display:flex;
         justify-content:space-between;
+        width:500px;
     }
     
     menu > ul > li {
@@ -111,12 +143,73 @@ footer img{
     }
     
     menu > ul > li > a {
-        color:white;
+        color:red;
         text-decoration:none;
     }
     
     menu > ul > li > a:hover {
-        color:rgb(230, 228, 228);
+        color:rgb(53, 3, 3);
+    }
+    
+    main {
+        display:flex;
+        max-width: 800px;
+        flex-wrap: wrap;
+    }
+    
+    main > div {
+        flex: 1 1 300px;
+        margin-left:5px;
+    }
+
+    footer {
+        padding:10px;
+    }
+
+}
+
+@media screen and (min-width:992px) and (max-width:1200px) {
+    header {
+        height:300px;
+    }
+
+    header h1 {
+        font-size:1.5em;
+    }
+
+    header > div.logo img {
+        width:120px;
+    }
+
+    header > div.burguer > span {
+        display:none;
+    }
+
+    menu {
+        display:block;
+        margin-top:70px;
+        margin-left:15px;
+    }
+
+    menu > ul {
+        display:flex;
+        justify-content:space-between;
+        width:500px;
+        background-color:red;
+    }
+    
+    menu > ul > li > a {
+        color:white;
+    }
+
+    main {
+        display:flex;
+        flex-wrap: wrap;
+    }
+
+    main > div {
+        flex: 1 1 290px;
+        margin:5px;
     }
     
 }
